@@ -23,7 +23,7 @@ public class Tweet {
 
     private String tweet;
 
-    private Long userId;
+    private User user;
 
     private Boolean isEdited;
 
