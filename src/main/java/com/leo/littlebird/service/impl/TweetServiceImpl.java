@@ -39,11 +39,6 @@ public class TweetServiceImpl implements TweetService {
     @Override
     public Tweet saveTweets(TweetDto tweetDto) {
         Tweet tweet = new Tweet();
-        tweet.setTweet(tweetDto.getTweet());
-        tweet.setIsEdited(Boolean.FALSE);
-        tweet.setUser(tweetDto.getUser());
-        tweet.setCreateAt(LocalDate.now());
-        tweet.setUpdateAt(LocalDate.now());
         Tweet savedTweet = tweetRepository.save(tweet);
         return savedTweet;
     }
@@ -51,9 +46,6 @@ public class TweetServiceImpl implements TweetService {
     @Override
     public Tweet updateTweets(Long id, TweetDto tweetDto) {
         Tweet tweet = tweetRepository.findById(id).orElse(null);
-        tweet.setIsEdited(Boolean.TRUE);
-        tweet.setUpdateAt(LocalDate.now());
-        tweet.setTweet(tweetDto.getTweet());
         return tweetRepository.save(tweet);
     }
     

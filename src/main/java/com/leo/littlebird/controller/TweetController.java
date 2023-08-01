@@ -34,11 +34,6 @@ public class TweetController {
         return tweetService.saveTweets(tweetDto);
     }
 
-    @PutMapping("api/tweets/{id}")
-    public Tweet updateTweets(Long id, TweetDto tweetDto){
-        return tweetService.updateTweets(id, tweetDto);
-    }
-
     @DeleteMapping("api/tweets/{id}")
     public Boolean removeTweet(Long id){
         return tweetService.removeTweet(id);
